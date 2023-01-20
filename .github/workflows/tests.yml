@@ -17,5 +17,6 @@ jobs:
         run: |
           cp .env.example .env
           docker-compose build --no-cache
+          docker-compose run -e RAILS_ENV=test web bundle exec rake assets:precompile
           docker-compose run -e RAILS_ENV=test web rails db:create db:migrate
           docker-compose run -e RAILS_ENV=test web rake
