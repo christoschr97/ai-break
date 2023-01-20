@@ -1,0 +1,38 @@
+# create a docker-compose.yml file with the following content: rails app from dockerfile, postgres and a tailwind container.
+
+version: '3'
+
+services:
+  web:
+    build: .
+    command: rails server -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    depends_on:
+      - db
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydb
+    ports:
+      - '6000:5432'
+    volumes:
+      - postgres:/var/lib/postgresql/data
+  tailwind:
+    build: .
+    tty: true
+    stdin_open: true
+    links:
+      - database
+    volumes:
+      - .:/app
+    command: "bin/rails tailwindcss:watch"
+
+volumes:
+  postgres:
