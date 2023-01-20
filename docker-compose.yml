@@ -29,7 +29,7 @@ services:
     tty: true
     stdin_open: true
     links:
-      - database
+      - db
     volumes:
       - .:/app
     command: "bin/rails tailwindcss:watch"
