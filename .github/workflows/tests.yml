@@ -17,7 +17,6 @@ jobs:
       - name: Install dependencies
         run: |
           bundle install
-          yarn install
 
       - name: Build and test
         run: |
