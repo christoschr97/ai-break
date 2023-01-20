@@ -13,11 +13,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: |
-          gem install bundler
-
       - name: Build and test
         run: |
           docker-compose build
