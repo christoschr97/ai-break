@@ -34,6 +34,7 @@ services:
     volumes:
       - .:/app
     command: "bin/rails tailwindcss:watch"
+    env_file: .env
 
 volumes:
   postgres:
