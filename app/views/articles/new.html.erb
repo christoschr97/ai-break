@@ -1,7 +1,17 @@
 <div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New article</h1>
+  <div class="text-center mt-10 mb-5">
+    <img src="hero-image.jpg" alt="Hero Image" class="w-full h-32 object-cover object-center">
+  </div>
+
+  <h1 class="text-center font-bold text-4xl text-gray-800 mt-10 mb-5">Create a New Masterpiece</h1>
+
+  <p class="text-center mb-5 text-lg text-gray-700">Share your thoughts and ideas with the world by creating a new article.</p>
 
   <%= render "form", article: @article %>
 
-  <%= link_to 'Back to articles', articles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to 'Back to articles', articles_path, class: "mt-5 ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>
+
+<%= render Ui::StatsComponent.new %>
+
+<%= render Ui::ContactDetailsComponent.new %>

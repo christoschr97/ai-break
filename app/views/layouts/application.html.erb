@@ -11,14 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-slate-300">
-    <div class="flex flex-col h-full min-h-screen">
-      <%= render 'layouts/navigation' %>
-      <main class="container mx-auto mt-28 px-5 flex bg-slate-300">
-        <%= yield %>
-      </main>
+  <body class="min-h-screen relative min-h-screenbg-slate-300">
+    <%= render 'shared/navigation' %>
+    <div class="pb-20">
+      <%= yield %>
     </div>
+    <%# <%= render Ui::DividerComponent.new %>
     <%= render 'shared/footer' %>
-
   </body>
 </html>

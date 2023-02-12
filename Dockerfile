@@ -1,5 +1,5 @@
 # Create me a dockerfile for a rails 7 application and tailwindcss
-FROM ruby:2.7.1-alpine
+FROM ruby:3.1.2-alpine
 
 RUN apk add --no-cache --update \
     build-base \
